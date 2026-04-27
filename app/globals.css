@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
@@ -9,67 +9,123 @@
 }
 
 :root {
-  --background: #0B0B0B;
-  --foreground: #f5f1e8;
-  --accent-gold: #a89968;
-  --accent-burgundy: #4a1f1f;
+  --concert-black: #0a0a0a;
+  --concert-black-lighter: #1a1a1a;
+  --ivory: #f5f0e8;
+  --ivory-soft: #d4cec0;
+  --mahogany: #6b4423;
+  --aged-gold: #9d8b6e;
+  --burgundy: #5a2333;
+  --burgundy-dark: #3d1725;
+  --accent: #a68f6f;
   --border: #2a2a2a;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--concert-black);
+  color: var(--ivory);
   font-family: 'Inter', sans-serif;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.6;
   overflow-x: hidden;
+  letter-spacing: 0.3px;
 }
 
-/* Typography */
+/* Display Typography - Luxury Editorial */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  color: var(--ivory);
 }
 
 h1 {
-  font-size: 5rem;
-  line-height: 1.1;
+  font-size: 5.5rem;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
 }
 
 h2 {
   font-size: 3.5rem;
   line-height: 1.1;
+  font-weight: 600;
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
 }
 
 h3 {
   font-size: 2rem;
-  line-height: 1.2;
+  line-height: 1.15;
+  font-weight: 600;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
-/* Elegant link styling */
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ivory-soft);
+  font-weight: 400;
+}
+
+.text-display-lg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.text-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.text-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--aged-gold);
+}
+
+.text-caption {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--aged-gold);
+}
+
+/* Links */
 a {
-  transition: color 0.3s ease;
+  color: var(--ivory);
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--accent-gold);
+  color: var(--aged-gold);
 }
 
-/* Selection color */
 ::selection {
-  background-color: var(--accent-gold);
-  color: var(--background);
-}
-
-/* Smooth scrolling and transitions */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+  background-color: var(--aged-gold);
+  color: var(--concert-black);
 }
 
 /* Film grain texture overlay */
@@ -81,8 +137,16 @@ body::before {
   width: 100%;
   height: 100%;
   background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' /%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: overlay;
+  opacity: 0.8;
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
 }

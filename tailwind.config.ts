@@ -10,17 +10,20 @@ const config: Config = {
       colors: {
         // Concert hall palette
         concert: {
-          black: '#0B0B0B',
+          black: '#0a0a0a',
           'black-lighter': '#1a1a1a',
           'black-border': '#2a2a2a',
-          ivory: '#f5f1e8',
-          'ivory-soft': '#ede8df',
-          mahogany: '#3d2817',
+          ivory: '#f5f0e8',
+          'ivory-soft': '#d4cec0',
+          mahogany: '#6b4423',
           'mahogany-dark': '#2a1a0f',
           gold: '#a89968',
           'gold-muted': '#8b7d5f',
-          burgundy: '#4a1f1f',
+          burgundy: '#5a2333',
         },
+        'aged-gold': '#9d8b6e',
+        'ivory': '#f5f0e8',
+        'ivory-soft': '#d4cec0',
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
